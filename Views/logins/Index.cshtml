@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HereWeGo.Models.login>
+
+@{
+    ViewBag.Title = "Käyttäjät";
+}
+
+<h2>Käyttäjät</h2>
+
+<p>
+    @Html.ActionLink("Luo uusi", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+Käyttäjänimi
+        </th>
+        <th>
+Salasana
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+*****
+        </td>
+        <td>
+            @Html.ActionLink("Muokkaa", "Edit", new { id = item.userid }) |
+            @Html.ActionLink("Lisätiedot", "Details", new { id = item.userid }) |
+            @Html.ActionLink("Poista", "Delete", new { id = item.userid })
+        </td>
+    </tr>
+}
+
+</table>

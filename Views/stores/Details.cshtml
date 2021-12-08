@@ -1,0 +1,41 @@
+﻿@model HereWeGo.Models.store
+
+@{
+    ViewBag.Title = "Lisätiedot";
+}
+
+<h2>Lisätiedot</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+Päivämäärä
+        </dt>
+
+        <dd>
+            @Model.date.ToString("dd/MM/yyyy")
+        </dd>
+
+        <dt>
+Hinta
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+Kuvaus
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Muokkaa", "Edit", new { id = Model.ostosid }) |
+    @Html.ActionLink("Takaisin", "Index")
+</p>
